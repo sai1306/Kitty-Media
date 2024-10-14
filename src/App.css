@@ -1,0 +1,105 @@
+*{
+  background-color: black;
+  color: white;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  img {
+    width: 100%;
+  }
+}
+
+.ratio{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.center{
+  text-align: center;
+}
+.btns{
+  background-color: burlywood;
+  border: 2px solid black;
+}
+
+.image-border{
+  border-radius:10px;
+}
+
+/* Custom styling for image cards with diagonal shadow */
+/* Custom styling for image cards */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: black;
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid transparent;  /* Base border */
+}
+
+/* Hover effect for the cards */
+.card:hover {
+  transform: translateY(-10px);  /* Lifting effect */
+  box-shadow: 0 8px 20px rgb(145, 144, 144);
+  cursor: pointer;
+}
+
+/* Cross border effect using ::before and ::after */
+.card::before, .card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;  /* Red cross-border color */
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+/* Position ::before to form a cross pattern */
+.card::before {
+  transform: rotate(45deg);  /* Rotating the first border */
+}
+
+/* Position ::after to form a cross pattern */
+.card::after {
+  transform: rotate(-45deg);  /* Rotating the second border */
+}
+
+/* Hover effect for cross-borders */
+.card:hover::before, .card:hover::after {
+  transform: rotate(0deg);  /* Animating the rotation on hover */
+}
+
+/* Styling for images */
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect on images */
+.card:hover .card-image {
+  transform: scale(1.05);  /* Slight zoom on hover */
+}
+
+/* Smooth transition for transformations */
+.card-image, .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
